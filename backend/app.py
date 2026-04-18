@@ -6,7 +6,6 @@ CORS(app)
 
 data_store = {}
 
-# ✅ ADD THIS
 @app.route("/")
 def home():
     return "Backend is running"
@@ -23,4 +22,4 @@ def get(user):
     return jsonify(data_store.get(user, {}))
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000)
