@@ -3,7 +3,7 @@ import {useNavigate} from "react-router-dom";
 
 function AppDashboard(){
     const sendData = async (user, app, time) => {
-  await fetch("http://127.0.0.1:5000/save", {
+  await fetch("https://parent-monitoring-backend.onrender.com/save", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
