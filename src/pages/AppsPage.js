@@ -145,7 +145,6 @@ const appLinks={
 // =====================
 const getLimit=(app)=>{
 if(userType==="adult") return 9999;
-
 if(userType==="child"){
 if(games.includes(app)) return 60;
 if(youtube.includes(app)) return 60;
