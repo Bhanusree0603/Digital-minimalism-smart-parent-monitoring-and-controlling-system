@@ -39,15 +39,16 @@ const query = search + " tutorial";
 const response = await fetch(
 `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=25&q=${query}&key=${API_KEY}`
 );
-
 const data = await response.json();
 
-console.log(data);
-alert(JSON.stringify(data));
+console.log("YouTube Response:", data);
 
-// ✅ SAFE FIX
+if(data.error){
+  alert("API Error: " + data.error.message);
+  return;
+}
+
 setVideos(data.items || []);
-
 }catch(error){
 
 console.error(error);
