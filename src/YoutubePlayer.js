@@ -42,6 +42,9 @@ const response = await fetch(
 
 const data = await response.json();
 
+console.log(data);
+alert(JSON.stringify(data));
+
 // ✅ SAFE FIX
 setVideos(data.items || []);
 
