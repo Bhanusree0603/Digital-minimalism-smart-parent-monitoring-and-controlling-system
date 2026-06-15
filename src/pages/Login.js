@@ -1,14 +1,5 @@
 import React,{useState,useEffect} from "react";
 import {useNavigate} from "react-router-dom";
-
-function Login(){
-
-const navigate = useNavigate();
-const [pin,setPin] = useState("");
-const [time,setTime] = useState(new Date().toLocaleTimeString());
-const [date,setDate] = useState(new Date().toLocaleDateString());
-const [quote,setQuote] = useState("");
-
 // Daily Quotes
 const quotes=[
 "Small steps every day lead to big success.",
@@ -20,20 +11,31 @@ const quotes=[
 "Control your screen, don't let it control you.",
 "Great achievements start with small habits."
 ];
+function Login(){
 
-useEffect(()=>{
+const navigate = useNavigate();
+const [pin,setPin] = useState("");
+const [time,setTime] = useState(new Date().toLocaleTimeString());
+const [date,setDate] = useState(new Date().toLocaleDateString());
+const [quote,setQuote] = useState("");
 
-setInterval(()=>{
-setTime(new Date().toLocaleTimeString());
-setDate(new Date().toLocaleDateString());
-},1000);
+// Clock
+useEffect(() => {
+  const timer = setInterval(() => {
+    setTime(new Date().toLocaleTimeString());
+    setDate(new Date().toLocaleDateString());
+  }, 1000);
 
-// random quote
-const randomQuote = quotes[Math.floor(Math.random()*quotes.length)];
-setQuote(randomQuote);
+  return () => clearInterval(timer);
+}, []);
 
-},[]);
+// Random quote
+useEffect(() => {
+  const randomQuote =
+    quotes[Math.floor(Math.random() * quotes.length)];
 
+  setQuote(randomQuote);
+}, []);
 const pressNumber = (num)=>{
 if(pin.length < 4){
 setPin(pin+num);
