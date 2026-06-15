@@ -274,13 +274,30 @@ if(!search){
 alert("Enter something to search");
 return;
 }
-
 const studyKeywords = [
 "tutorial","lecture","course","class","lesson","education",
-"python","java","dbms","machine learning","ai","data science",
-"math","science","coding","programming","engineering"
-];
 
+// Programming
+"python","java","c","c++","javascript","react","html","css",
+"coding","programming","web development",
+
+// CS Subjects
+"dbms","database","sql","mongodb",
+"dsa","data structures","algorithms",
+"operating system","os",
+"computer networks","cn",
+"compiler design",
+"software engineering",
+"machine learning","ai","data science",
+"cloud computing",
+"cyber security",
+
+// General Education
+"math","science","physics","chemistry","biology",
+"assignment","notes","project","lab","practical",
+"semester","exam","college","university",
+"interview","placement","gate","jee","neet"
+];
 const blockedKeywords = [
 "movie","movies","song","songs","music","trailer","comedy","funny",
 "film","series","episode","reaction","shortfilm","vlog","gaming",
@@ -329,7 +346,9 @@ localStorage.setItem("youtubeAttempts", JSON.stringify(attempts));
 }
 
 // ✅ STUDY CHECK
-const isStudy = studyKeywords.some(word => text.includes(word));
+const isStudy =
+studyKeywords.some(word => text.includes(word)) ||
+text.length >= 3;
 
 if(!isStudy){
 alert("⚠ Only educational searches allowed!");
