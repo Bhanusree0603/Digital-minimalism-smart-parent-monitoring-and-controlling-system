@@ -5,7 +5,7 @@ function YoutubePlayer(){
 
 const navigate = useNavigate();
 
-const API_KEY = "AIzaSyBS-JGhqYhts_mRbiCUby551LRtzA-KwdQ"; // 🔐 replace with your key
+const API_KEY = "AIzaSyDtD3G5ebe1ok67IR6sPSto-bxJwndYrZI"; // 🔐 replace with your key
 
 const [search,setSearch] = useState("");
 const [videos,setVideos] = useState([]);
