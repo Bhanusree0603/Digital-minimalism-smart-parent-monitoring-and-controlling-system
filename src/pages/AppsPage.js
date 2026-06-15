@@ -47,7 +47,7 @@ localStorage.setItem("lastResetDate",today);
 const [time,setTime] = useState(new Date().toLocaleTimeString());
 const [date,setDate] = useState(new Date().toLocaleDateString());
 const [search,setSearch] = useState("");
-const [videoId,setVideoId] = useState(null);
+const [selectedvideoId,setVideoId] = useState(null);
 
 // TIME
 useEffect(()=>{
@@ -76,12 +76,7 @@ const games=[
 "Temple Run",
 "Subway Surfers"
 ];
-const social=[
-"Instagram",
-"Twitter",
-"Spotify",
-"Netflix"
-];
+//const media=["Instagram","Twitter","Spotify","Netflix"];
 const shopping=[
 "Amazon",
 "Flipkart",

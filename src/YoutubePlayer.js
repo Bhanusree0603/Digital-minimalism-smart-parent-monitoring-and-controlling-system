@@ -182,11 +182,11 @@ borderRadius:"12px",
 boxShadow:"0 4px 15px rgba(0,0,0,0.1)"
 }}
 >
-
 <img
-src={video.snippet.thumbnails.medium.url}
-width="100%"
-style={{borderRadius:"10px"}}
+  src={video.snippet.thumbnails.medium.url}
+  alt="YouTube thumbnail"
+  width="100%"
+  style={{ borderRadius: "10px" }}
 />
 
 <h4 style={{fontSize:"14px"}}>
